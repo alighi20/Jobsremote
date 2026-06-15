@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Board UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="topbar">
+    <div class="logo">AG</div>
+    <button id="themeToggle">🌙</button>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Find remote developer jobs...">
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- LEFT LIST -->
+  <div class="job-list">
+    <div class="job active">
+      <span class="badge green">LO</span>
+      <div>
+        <h4>Full-Stack Developer</h4>
+        <p>$80,000 • Global</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <span class="badge blue">CH</span>
+      <div>
+        <h4>Front-End Developer</h4>
+        <p>$85,000 • Global</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <span class="badge yellow">CS</span>
+      <div>
+        <h4>Software Developer</h4>
+        <p>$100,000 • Global</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="job-detail">
+    <div class="detail-header">
+      <span class="badge green big">LO</span>
+      <div>
+        <h2>Full-Stack Developer</h2>
+        <p>LakeOperations</p>
+      </div>
+      <button class="apply">Apply</button>
+    </div>
+
+    <p class="desc">
+      As a full-stack developer, you will design and deploy scalable systems.
+    </p>
+
+    <div class="tags">
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>CSS</span>
+      <span>Node.js</span>
+    </div>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
