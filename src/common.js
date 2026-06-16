@@ -1,4 +1,8 @@
+//CONSTANTs
+export const BASE_APIL_UR='https://bytegrad.com/course-assets/js/2/api/jobs';
+export const DEFAULT_DISPLAY_TIME=4000;
 
+//SELECTORS
 export const bookmarksBtnEl = document.querySelector('.bookmarks-btn');
 export const errorEl = document.querySelector('.error');
 export const errorTextEl = document.querySelector('.error__text');

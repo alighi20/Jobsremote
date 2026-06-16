@@ -1,8 +1,11 @@
 import{
 jobListSearchEl,
 jobDetailsContentEl,
-spinnerJobDetailsEl
+spinnerJobDetailsEl,
+BASE_API_URL
 }from '../common.js';
+import renderError from './Error.js';
+import renderSpinner from './Spinner.js';
 const clickHandler = event => {
     event.preventDefault();
     const jobItemEL = event.target.closest('.job-item');
@@ -22,7 +25,7 @@ const clickHandler = event => {
 
     const jobId = jobItemEL.children[0].getAttribute('href');
     console.log(jobId);
-    fetch(`https://bytegrad.com/course-assets/js/2/api/jobs/${jobId}`)
+    fetch(`${BASE_API_URL}/jobs/${jobId}`)
         .then(response => {
             if (!response.ok) {
                 console.log('wrong');
@@ -33,7 +36,7 @@ const clickHandler = event => {
         .then(data => {
             const { jobItem } = data;
 
-            spinnerJobDetailsEl.classList.remove('spinner--visible');
+          renderSpinner('joblist')
             console.log(jobItem);
 
             const detail = `

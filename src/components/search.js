@@ -3,10 +3,11 @@ jobListSearchEl,
 searchInputEl,
 searchFormEl,
 spinnerSearchEl,
-numberEl
+numberEl,
+BASE_API_URL
 }from '../common.js';
-
-
+import renderError from './Error.js';
+import renderSpinner from './Spinner.js';
 
 // SEARCH COMPONENT
 const submitHandler = event => {
@@ -20,18 +21,14 @@ const submitHandler = event => {
     const forbiddenPattern = /[0-9]/;
     const patternMatch = forbiddenPattern.test(searchText);
     if (patternMatch) {
-        errorTextEl.textContent = "your search may not contain number";
-        errorEl.classList.add('error--visible');
-        setTimeout(() => {
-            errorEl.classList.remove('error--visible');
-        }, 3000);
+      renderError('your search may not contain number');
     }
 
     searchInputEl.blur();
 
-    spinnerSearchEl.classList.add('spinner--visible');
+  renderSpinner('search')
     // fetch('data.json');
-    fetch(`https://bytegrad.com/course-assets/js/2/api/jobs?search=${searchText}`)
+    fetch(`${BASE_API_URL}/jobs?search=${searchText}`)
         .then(response => {
             if (!response.ok) {
                 console.log('something went wrong');
@@ -44,9 +41,9 @@ const submitHandler = event => {
             const { jobItems } = data;
             numberEl.textContent = jobItems.length;
 
-
-            spinnerSearchEl.classList.remove('spinner--visible');
-            spinnerSearchEl.classList.add('spinner--hidden');
+ renderSpinner('search')
+            //spinnerSearchEl.classList.remove('spinner--visible');
+            //spinnerSearchEl.classList.add('spinner--hidden');
             jobItems.slice(0, 7).forEach(jobItem => {
                 const jobItemHtml = `
             <li class="job-item">
