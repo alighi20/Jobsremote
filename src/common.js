@@ -1,5 +1,5 @@
 //CONSTANTs
-export const BASE_APIL_UR='https://bytegrad.com/course-assets/js/2/api/jobs';
+export const BASE_API_URL='https://bytegrad.com/course-assets/js/2/api/jobs';
 export const DEFAULT_DISPLAY_TIME=4000;
 
 //SELECTORS

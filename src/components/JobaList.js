@@ -36,7 +36,7 @@ const clickHandler = event => {
         .then(data => {
             const { jobItem } = data;
 
-          renderSpinner('joblist')
+          renderSpinner('jobList')
             console.log(jobItem);
 
             const detail = `
